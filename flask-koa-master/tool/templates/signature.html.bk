@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+    {% block content %}
+	<div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+		            <label for="signature List">signature List</label>
+                            <textarea id="signatureRes" value=" " class="form-control" rows="30"></textarea>
+                        </div>
+                    </div>
+		    <div class="col-md-4">
+		        <div class="form-group">
+                            <label for="signatureType">signature类型</label>
+                            <select id="signatureType" class="form-control">
+                                <option value=“IP”>IP</option>
+                                <option value="domain">domain</option>
+                            </select> 
+                        </div>
+                        <div class="form-group">
+                            <label for="signatureNum">signature 数量</label>
+                            <input id="signatureNum" class="form-control">							
+	                </div>
+			<div class="form-group">
+			    <label for="fileType" class="control-label"></label></br>
+			    <label> <input type="radio" class="control-label" id="predefined" value="预定义特征库文件" name="fileType" checked="checked">预定义特征库文件</label></br>
+			    <label><input type="radio" class="control-label" id="custom" value="自定义特征库文件 " name="fileType">自定义特征库配置文件 </label></br>
+			</div>
+                        <div class="my-4">
+			    <button type="button" id=botnetBtn class="btn btn-rounded btn-primary">确认</button>
+                        </div>						
+	            </div>
+
+		    <div class="col-md-6">
+		        <div class="form-group">
+		        <label for="signature List">signature List</label>
+		        <textarea id="signatureRes" value=" " class="form-control" rows="30"></textarea>
+		        </div>
+		    </div>
+
+                </div>
+            </div>
+    {% endblock %}
+    {% block script%}
+    <script src="./static/js/botnet_signature.js"></script>
+    {%endblock%}

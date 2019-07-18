@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TOOL</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendor/simple-line-icons/css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='vendor/font-awesome/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css')}}">
+</head>
+<body class="sidebar-fixed header-fixed">
+<div class="page-wrapper">
+    <nav class="navbar page-header">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static',filename='imgs/logo.png')}}">
+        </a>
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">Navigation</li>
+                    <li class="nav-item">
+                        <a href="index" class="nav-link">
+                            <i class="icon icon-speedometer"></i> Dashboard
+                        </a>
+                    </li>
+		    <li class="nav-item nav-dropdown">
+		        <a href="#" class="nav-link nav-dropdown-toggle">
+			<i class="icon icon-energy"></i>AD应用<i  class="fa fa-caret-left"></i>
+			</a>
+			<ul class="nav-dropdown-items">
+			    <li class="nav-item">
+                                <a href="/ad/ping_of_death" class="nav-link">
+                                <i class="icon icon-puzzle"></i> ping_of_death
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/ad/land_dos" class="nav-link">
+                                <i class="icon icon-grid"></i> land_dos
+                                </a>
+                            </li>
+
+                             <li class="nav-item">
+                                <a href="/ad/port_scan" class="nav-link">
+                                <i class="icon icon-grid"></i> port_scan
+                                </a>
+                            </li> 
+			    
+			   
+			    {% block AD %}
+			    {% endblock %}
+			</ul>
+		    </li>
+		    <li class="nav-item nav-dropdown">
+		    <a href="#" class="nav-link nav-dropdown-toggle">
+		    <i class="icon icon-energy"></i>AV应用<i class="fa fa-caret-left"></i>
+		    </a>
+		    <ul class="nav-dropdown-items">
+		        <li>
+			<a href="test" class="nav-link">
+			<i class="icon icon-puzzle"></i>AVtest
+			</a>
+			</li>
+			{% block AV %}
+			{% endblock %}
+		    </ul>
+		    </li>
+                    <li class="nav-item nav-dropdown">
+		    <a href="#" class="nav-link nav-dropdown-toggle">
+		    <i class="icon icon-energy"></i>ips应用<i class="fa fa-caret-left"></i>
+		    </a>
+		    </li>
+		    <li class="nav-item nav-dropdown">
+		    <a href="#" class="nav-link nav-dropdown-toggle">
+		    <i class="icon icon-energy"></i>设备管理<i class="fa fa-caret-left"></i>
+		    </a>
+		    </li>
+
+		    {% block nav %}
+		    {% endblock %}
+		    <li class="nav-item nav-dropdown">
+		        <a href="#" class="nav-link nav-dropdown-toggle">
+		        <i class="icon icon-umbrella"></i>更多应用<i class= "fa fa-caret-left"></i>
+		        </a>
+		        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="/more/md5" class="nav-link">
+                                <i class="icon icon-puzzle"></i> 计算文件MD5值
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/more/signature" class="nav-link">
+                                <i class="icon icon-grid"></i> botnet特征库模拟
+                                </a>
+                            </li>
+		        {% block more %}
+		        {% endblock %}
+		       </ul>
+		    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+		{% block content %}
+
+        {% endblock %}
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{ url_for('static',filename='vendor/popper.js/popper.min.js') }}"></script>
+<script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static',filename='vendor/chart.js/chart.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/carbon.js')}}"></script>
+<script src="{{ url_for('static',filename='js/demo.js')}}"></script>
+{% block script %}
+{% endblock %}
+</body>
+</html>

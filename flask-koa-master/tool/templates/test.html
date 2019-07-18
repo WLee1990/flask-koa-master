@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+    {% block nav %}
+        <li class="nav-item">
+            <a href="{{url_for('ad.Test')}}" class="nav-link"
+                <i class="icon icon-grid"></i> 前台示例
+            </a>
+        </li>
+
+    {% endblock %}
+    {% block content %}
+         <div class="col-md-4">
+	      <div class="form-group">
+	           <label for="TestType">test类型</label>
+	           <select id="TestType" class="form-control">
+	               <option value=“test1”>test1</option>
+	               <option value="test2">test2</option>
+		   </select>
+	       </div>
+	 <div class="col-md-4">
+	       <div class="form-group">
+	       <label for="TestRes">示例结果</label>
+	       <textarea id="TestRes" value=" " class="form-control" rows="6"></textarea>
+         </div>
+	 <div class="my-4">
+	     <button type="button" id=TestBtn class="btn btn-rounded btn-primary">确认</button>
+	 </div>
+
+    {% endblock %}
+
+    {% block script %}
+        <script src="{{url_for('static',filename='js/test.js')}}"></script>
+    {% endblock %}
+
